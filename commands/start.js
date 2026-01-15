@@ -45,6 +45,13 @@ module.exports = {
                     replaced = true;
                     return match[0] === 'х' ? 'хутора' + match.slice(3) : 'Хутора' + match.slice(3);
                 });
+                content = content.replace(/хуу+й/gi, (match) => {
+                    replaced = true;
+                    // Count the number of 'у's in the match
+                    const uCount = match.match(/у+/i)[0].length;
+                    const replacement = match[0] === 'х' ? 'х' + 'у'.repeat(uCount) + 'тор' : 'Х' + 'у'.repeat(uCount) + 'тор';
+                    return replacement;
+                });
                 content = content.replace(/хуй[А-я]*/gi, (match) => {
                     replaced = true;
                     return match[0] === 'х' ? 'хутор' + match.slice(3) : 'Хутор' + match.slice(3);
