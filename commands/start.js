@@ -19,15 +19,23 @@ module.exports = {
         collector.on('collect', async (message) => {
             // Ignore messages from bots
             if (message.author.bot) return;
-            // Check if the message contains the word "хуй" and/или "пиздец"
-            if (message.content.toLowerCase().includes('пиздец') || message.content.toLowerCase().includes('ху')) {
+            // Check if the message contains the word "хуй", "пиздец" and/or "говно"
+            if (message.content.toLowerCase().includes('пиздец') || message.content.toLowerCase().includes('ху') || message.content.toLowerCase().includes('говно') || message.content.toLowerCase().includes('бро')) {
                 // Get the initial content of the message
                 let content = message.content;
                 let replaced = false;
-                // Replace all occurences of "хуй" with "хутор" and "пиздец" with "апофеоз", keeping the original case
+                // Replace all occurences of "хуй" with "хутор", "говно/хуево" with "понос/поносно", "бро" with "бразак", and "пиздец" with "апофеоз", keeping the original case
+                content = content.replace(/бро/gi, (match) => {
+                    replaced = true;
+                    return match[0] === 'б' ? 'бразак' : 'Бразак';
+                });
                 content = content.replace(/хуесос[А-я]*/gi, (match) => {
                     replaced = true;
                     return match[0] === 'х' ? 'хуторосос' + match.slice(6) : 'Хуторосос' + match.slice(6);
+                });
+                content = content.replace(/ху[её]в[A-я]+/gi, (match) => {
+                    replaced = true;
+                    return match[0] === 'х' ? 'поносн' + match.slice(4) : 'Поносн' + match.slice(4);
                 });
                 content = content.replace(/ху[её]в[A-я]*/gi, (match) => {
                     replaced = true;
@@ -59,6 +67,14 @@ module.exports = {
                 content = content.replace(/пиздец[А-я]*/gi, (match) => {
                     replaced = true;
                     return match[0] === 'п' ? 'апофеоз' + match.slice(6) : 'Апофеоз' + match.slice(6);
+                });
+                content = content.replace(/говно[А-я]*/gi, (match) => {
+                    replaced = true;
+                    return match[0] === 'г' ? 'понос' + match.slice(5) : 'Понос' + match.slice(5);
+                });
+                content = content.replace(/говн[А-я]*/gi, (match) => {
+                    replaced = true;
+                    return match[0] === 'г' ? 'понос' + match.slice(4) : 'Понос' + match.slice(4);
                 });
                 // If no replacements were made, do nothing
                 if (!replaced) return;
