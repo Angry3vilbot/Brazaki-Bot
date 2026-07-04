@@ -29,27 +29,27 @@ module.exports = {
                     replaced = true;
                     return match[0] === 'б' ? 'бразак' : 'Бразак';
                 });
-                content = content.replace(/хуесос[А-я]*/gi, (match) => {
+                content = content.replace(/хуесос[А-яЁё]*/gi, (match) => {
                     replaced = true;
                     return match[0] === 'х' ? 'хуторосос' + match.slice(6) : 'Хуторосос' + match.slice(6);
                 });
-                content = content.replace(/ху[её]в[A-я]+/gi, (match) => {
+                content = content.replace(/ху[её]в[A-яЁё]+/gi, (match) => {
                     replaced = true;
                     return match[0] === 'х' ? 'хуторов' + match.slice(4) : 'Хуторов' + match.slice(4);
                 });
-                content = content.replace(/ху[её]в[A-я]*/gi, (match) => {
+                content = content.replace(/ху[её]в[A-яЁё]*/gi, (match) => {
                     replaced = true;
                     return match[0] === 'х' ? 'хуторов' + match.slice(4) : 'Хуторов' + match.slice(4);
                 });
-                content = content.replace(/ху[её]м[А-я]*/gi, (match) => {
+                content = content.replace(/ху[её]м[А-яЁё]*/gi, (match) => {
                     replaced = true;
                     return match[0] === 'х' ? 'хутором' + match.slice(4) : 'Хутором' + match.slice(4);
                 });
-                content = content.replace(/ху[её][А-я]+/gi, (match) => {
+                content = content.replace(/ху[её][А-яЁё]+/gi, (match) => {
                     replaced = true;
                     return match[0] === 'х' ? 'хуторо' + match.slice(3) : 'Хуторо' + match.slice(3);
                 });
-                content = content.replace(/хуя[А-я]*/gi, (match) => {
+                content = content.replace(/хуя[А-яЁё]*/gi, (match) => {
                     replaced = true;
                     return match[0] === 'х' ? 'хутора' + match.slice(3) : 'Хутора' + match.slice(3);
                 });
@@ -60,19 +60,19 @@ module.exports = {
                     const replacement = match[0] === 'х' ? 'х' + 'у'.repeat(uCount) + 'тор' : 'Х' + 'у'.repeat(uCount) + 'тор';
                     return replacement;
                 });
-                content = content.replace(/хуй[А-я]*/gi, (match) => {
+                content = content.replace(/хуй[А-яЁё]*/gi, (match) => {
                     replaced = true;
                     return match[0] === 'х' ? 'хутор' + match.slice(3) : 'Хутор' + match.slice(3);
                 });
-                content = content.replace(/пиздец[А-я]*/gi, (match) => {
+                content = content.replace(/пиздец[А-яЁё]*/gi, (match) => {
                     replaced = true;
                     return match[0] === 'п' ? 'апофеоз' + match.slice(6) : 'Апофеоз' + match.slice(6);
                 });
-                content = content.replace(/говно[А-я]*/gi, (match) => {
+                content = content.replace(/говно[А-яЁё]*/gi, (match) => {
                     replaced = true;
                     return match[0] === 'г' ? 'понос' + match.slice(5) : 'Понос' + match.slice(5);
                 });
-                content = content.replace(/говн[А-я]*/gi, (match) => {
+                content = content.replace(/говн[А-яЁё]*/gi, (match) => {
                     replaced = true;
                     return match[0] === 'г' ? 'понос' + match.slice(4) : 'Понос' + match.slice(4);
                 });
