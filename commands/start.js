@@ -35,7 +35,7 @@ module.exports = {
                 });
                 content = content.replace(/ху[её]в[A-я]+/gi, (match) => {
                     replaced = true;
-                    return match[0] === 'х' ? 'поносн' + match.slice(4) : 'Поносн' + match.slice(4);
+                    return match[0] === 'х' ? 'хуторов' + match.slice(4) : 'Хуторов' + match.slice(4);
                 });
                 content = content.replace(/ху[её]в[A-я]*/gi, (match) => {
                     replaced = true;
