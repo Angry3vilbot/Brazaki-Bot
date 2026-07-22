@@ -12,7 +12,7 @@ module.exports = {
         if (!collectors || !collectors.has(channel.id)) {
             return await interaction.reply('The bot is not running in this channel.');
         }
-        await interaction.reply('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXJucnh0M3NwbXA0bXVlaHlwM3N0MTRpMWF0am81bjh4ajNibDU5ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fA08i9nPZ0Mw2FdhGl/giphy.gif');
+        await interaction.reply('https://klipy.com/gifs/limbus-company-ryoshu-8');
         // Stop the message collector
         const collector = collectors.get(channel.id);
         collector.stop();

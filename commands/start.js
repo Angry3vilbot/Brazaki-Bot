@@ -13,7 +13,7 @@ module.exports = {
         if (collectors.has(channel.id)) {
             return await interaction.reply('The bot is already running in this channel.');
         }
-        await interaction.reply('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2R6ang5cWlxb2RzY3p2OHNuYmNvdWplb21mYmMyaHF0d21lNW5uOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/a6nevQ68jTRGiu0Dcp/giphy.gif');
+        await interaction.reply('https://klipy.com/gifs/rien-limbus-1');
         // Create a message collector
         const collector = new MessageCollector(channel);
         collector.on('collect', async (message) => {
@@ -90,7 +90,7 @@ module.exports = {
                 }
                 
                 // Send the modified message using the webhook
-                await webhook.send({ content: content, username: username, avatarURL: avatarURL });
+                await webhook.send({ content: content, username: username, avatarURL: avatarURL, files: Array.from(message.attachments.values()) });
                 // Delete the original message
                 await message.delete();
             }
