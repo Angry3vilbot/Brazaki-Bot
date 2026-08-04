@@ -1,7 +1,6 @@
 const { SlashCommandBuilder, MessageCollector } = require('discord.js');
 const { replacer } = require('../util/message-replacer-collector.js');
-
-const collectors = new Map();
+const { collectors } = require('./start.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -16,7 +15,7 @@ module.exports = {
         }
         // Create a message collector
         const collector = new MessageCollector(channel);
-        collector.on('collect', async (message) => replacer(message));
+        collector.on('collect', async (message) => replacer(message, channel));
         // Store the collector in the map
         collectors.set(channel.id, collector);
     },

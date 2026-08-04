@@ -1,4 +1,4 @@
-async function replacer(message) {
+export async function replacer(message, channel) {
     // Ignore messages from bots
     if (message.author.bot) return;
     // Check if the message contains the word "хуй", "пиздец" and/or "говно"

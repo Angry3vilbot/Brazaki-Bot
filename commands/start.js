@@ -17,7 +17,7 @@ module.exports = {
         await interaction.reply('https://klipy.com/gifs/rien-limbus-1');
         // Create a message collector
         const collector = new MessageCollector(channel);
-        collector.on('collect', async (message) => replacer(message));
+        collector.on('collect', async (message) => replacer(message, channel));
         // Store the collector in the map
         collectors.set(channel.id, collector);
     },
