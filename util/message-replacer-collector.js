@@ -75,5 +75,10 @@ export async function replacer(message, channel) {
         await webhook.send({ content: content, username: username, avatarURL: avatarURL, files: Array.from(message.attachments.values()) });
         // Delete the original message
         await message.delete();
+        // If the message was a reply, send a reply to the message that was replied to
+        if(message.reference && message.reference.type === 0) {
+            const repliedMessage = await channel.messages.fetch(message.reference.messageId);
+            await repliedMessage.reply("^");
+        }
     }
 }
