@@ -59,7 +59,7 @@ export async function replacer(message, channel) {
             replaced = true;
             return match[0] === 'г' ? 'понос' + match.slice(4) : 'Понос' + match.slice(4);
         });
-        content = content.replace(/игра/gi, (match) => {
+        content = content.replace(/игр[А-яЁё]*/gi, (match) => {
             replaced = true;
             return match[0] === 'и' ? 'гомза' + match.slice(4) : 'Гомза' + match.slice(4);
         });
