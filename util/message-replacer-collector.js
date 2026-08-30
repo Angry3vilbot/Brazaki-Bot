@@ -3,7 +3,7 @@ export async function replacer(message, channel) {
     if (message.author.bot) return;
     let content = message.content.toLowerCase()
     // Check if the message contains the word "хуй", "пиздец" and/or "говно"
-    if (content.includes('пиздец') || content.includes('ху') || content.includes('говно') || content.includes('бро') || content.includes('игра')) {
+    if (content.includes('пиздец') || content.includes('ху') || content.includes('говно') || content.includes('бро') || content.includes('игр')) {
         // Get the initial content of the message
         let content = message.content;
         let replaced = false;
@@ -61,7 +61,7 @@ export async function replacer(message, channel) {
         });
         content = content.replace(/игр[А-яЁё]*/gi, (match) => {
             replaced = true;
-            return match[0] === 'и' ? 'гомза' + match.slice(4) : 'Гомза' + match.slice(4);
+            return match[0] === 'и' ? 'гомз' + match.slice(3) : 'Гомз' + match.slice(3);
         });
         // If no replacements were made, do nothing
         if (!replaced) return;
