@@ -12,7 +12,7 @@ module.exports = {
         if (!collectors || !collectors.has(channel.id)) {
             return await interaction.reply('The bot is not running in this channel.');
         }
-        await interaction.reply('https://klipy.com/gifs/limbus-company-ryoshu-8');
+        await interaction.reply('https://klipy.com/gifs/the-multitude-tightens-its-hold');
         // Stop the message collector
         const collector = collectors.get(channel.id);
         collector.stop();

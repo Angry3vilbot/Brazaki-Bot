@@ -14,7 +14,7 @@ module.exports = {
         if (collectors.has(channel.id)) {
             return await interaction.reply('The bot is already running in this channel.');
         }
-        await interaction.reply('https://klipy.com/gifs/rien-limbus-1');
+        await interaction.reply('https://klipy.com/gifs/meursault-eyes');
         // Create a message collector
         const collector = new MessageCollector(channel);
         collector.on('collect', async (message) => replacer(message, channel));
